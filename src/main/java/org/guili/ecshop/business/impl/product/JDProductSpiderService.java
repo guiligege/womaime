@@ -6,33 +6,19 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.guili.ecshop.bean.spider.GoodProduct;
 import org.guili.ecshop.business.impl.evaluate.EvaluateConstConfig;
-import org.guili.ecshop.business.impl.evaluate.TaobaoProductEvaluateService;
 import org.guili.ecshop.business.product.IProductSpiderService;
 import org.guili.ecshop.util.CommonTools;
 import org.guili.ecshop.util.SpiderRegex;
 
-/**
- * taobao产品分析
- * @ClassName:   TaobaoProductSpiderService 
- * @Description: TODO(这里用一句话描述这个类的作用) 
- * @author:      guilige 
- * @date         2014-1-2 下午4:52:27 
- */
-public class TaobaoProductSpiderService implements IProductSpiderService {
+public class JDProductSpiderService implements IProductSpiderService {
 
 	private static Logger logger=Logger.getLogger(TaobaoProductSpiderService.class);
-	/**
-	 * 分析淘宝产品url获取商品信息
-	 */
 	@Override
 	public GoodProduct analyzeProductUrl(String url) {
-		
+		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	/**
-	 * 分析url
-	 */
+
 	@Override
 	public Map<String, String> analyzeUrl(String producturl) {
 		Map<String, String> parammap=new HashMap<String, String>();
@@ -47,7 +33,7 @@ public class TaobaoProductSpiderService implements IProductSpiderService {
 	 */
 	private  Map<String, String>  taobaoAnalyze(String url){
 		Map<String, String> parammap=new HashMap<String, String>();
-		if(url==null || !(url.startsWith(EvaluateConstConfig.TAOBAOHEAD) || url.startsWith(EvaluateConstConfig.TAOBAOHEAD.replaceAll("http://", "")))){
+		if(url==null || !(url.startsWith(EvaluateConstConfig.JDHEAD) || url.startsWith(EvaluateConstConfig.JDHEAD.replaceAll("http://", "")))){
 			return null;
 		}
 		//解析url内容
@@ -68,11 +54,10 @@ public class TaobaoProductSpiderService implements IProductSpiderService {
 		return parammap;
 	}
 	
-	//测试
+	//test
 	public static void main(String[] args) {
-		TaobaoProductSpiderService taobaoProductSpiderService=new TaobaoProductSpiderService();
-		//taobaoProductSpiderService.analyzeUrl("http://item.taobao.com/item.htm?spm=a230r.1.14.65.qOznUh&id=35632976705&_u=2nmn69me3da");
-		taobaoProductSpiderService.analyzeUrl("http://item.taobao.com/item.htm?spm=a230r.1.14.56.qOznUh&id=35692810779&_u=2nmn69mff28");
+		IProductSpiderService jdProductSpiderService=new JDProductSpiderService();
+		jdProductSpiderService.analyzeUrl("http://detail.ju.taobao.com/home.htm?spm=608.5847457.11.d5.K8k6P6&item_id=36208494957&id=10000001811710");
 	}
 
 }

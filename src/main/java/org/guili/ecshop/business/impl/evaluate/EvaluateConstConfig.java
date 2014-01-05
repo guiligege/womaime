@@ -11,12 +11,14 @@ public class EvaluateConstConfig {
 	//淘宝，天猫，京东，易迅，苏宁，国美,QQ网购,一号店
 	public static final String TAOBAOHEAD="http://item.taobao.com/";
 	public static final String TMALLHEAD="http://detail.tmall.com/";
+	public static final String JUHEAD="http://detail.ju.taobao.com/";
 	public static final String JDHEAD="http://item.jd.com/";
 	public static final String YXHEAD="http://item.yixun.com/";
 	public static final String YHDHEAD="http://item.yhd.com/item/";
 	public static final String QQHEAD="http://item.wanggou.com/";
 	public static final String SUNINGHEAD="http://product.suning.com/";
 	public static final String GUOMEIHEAD="http://www.gome.com.cn/product/";
+	public static final String AMAZONHEAD="http://www.amazon.cn/gp/product/";
 	public static final String BRANDTMALL="tmall.com/";
 	
 }
